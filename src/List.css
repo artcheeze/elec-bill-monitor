@@ -1,0 +1,12 @@
+.List {
+    padding: 5%;
+    transition: cubic-bezier(.5,.08,.26,.85) 1.5s;
+}
+
+.dataList{
+   
+   height: 49vh;
+    overflow-wrap: scroll;
+    
+
+}

@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jsonfile": "^5.0.0",
     "react": "^16.8.3",
+    "react-charts": "^2.0.0-alpha.12",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-icons": "^3.4.0",
+    "react-scripts": "2.1.5",
+    "recharts": "^1.5.0",
+    "rumble-charts": "^2.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -22,4 +27,5 @@
     "not ie <= 11",
     "not op_mini all"
   ]
+  
 }
