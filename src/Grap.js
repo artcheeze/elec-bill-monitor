@@ -1,7 +1,7 @@
 
 import React, { PureComponent } from 'react';
 import {
-  ResponsiveContainer, ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  ResponsiveContainer, ComposedChart, Line,  Bar, XAxis,  CartesianGrid, Tooltip,
 } from 'recharts';
 
 const renderCustomBarLabel = ({ payload, x, y, width, height, value }) => {

@@ -15,7 +15,7 @@ class List extends Component {
     setTimeout(() => {
       this.props.data.forEach(e => {this.setState({n: this.state.n.concat(e.uv)})})
       this.props.data.forEach((e,i) => {
-        var n = e.uv
+        
         var temp = (
           <div>
             <div class="w-100"></div>
