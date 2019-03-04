@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    await fetch('http://10.148.0.2:5000/query').then(res => res.json()).then(ress => {
+    await fetch('http://localhost:5000/query').then(res => res.json()).then(ress => {
       ress.forEach(e => {
         this.setState({
           raw: this.state.raw.concat(e),
