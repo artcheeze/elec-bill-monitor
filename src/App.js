@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    await fetch('http://localhost:5000/query').then(res => res.json()).then(ress => {
+    await fetch('http://10.148.0.2:5000/query').then(res => res.json()).then(ress => {
       ress.forEach(e => {
         this.setState({
           raw: this.state.raw.concat(e),
@@ -45,7 +45,7 @@ class App extends Component {
   save = () => {
     if (this.state.num !== "") {
      
-        fetch('http://localhost:5000/save', {
+        fetch('http://10.148.0.2:5000/save', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
