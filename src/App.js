@@ -9,7 +9,7 @@ import './App.css';
 class App extends Component {
   state = {
     num: "",
-    date: new Date().toLocaleDateString(),
+    date: new Date().toLocaleString(),
     date2: new Date().toLocaleString(),
     raw: [],
     raw2:[],
@@ -18,6 +18,19 @@ class App extends Component {
   }
 
   async componentDidMount() {
+    await this.query();
+
+    setInterval(() => {
+      this.setState({
+        date2: new Date().toLocaleString()
+      })
+    }, 1000)
+
+   
+  }
+   query = async () => {
+
+    this.setState({raw: [],raw2: []})
     await fetch('http://35.186.145.63:5000/query').then(res => res.json()).then(ress => {
       ress.forEach(e => {
         this.setState({
@@ -29,17 +42,8 @@ class App extends Component {
       this.state.raw.reverse();
 
     })
-
-
-    setInterval(() => {
-      this.setState({
-        date2: new Date().toLocaleString()
-      })
-    }, 1000)
-
-   
+    this.forceUpdate();
   }
-
 
 
   save = () => {
@@ -53,13 +57,13 @@ class App extends Component {
           },
           body: JSON.stringify({ name: this.state.date, uv: this.state.num })
         })
+        this.setState({num: ""})
       
-   
-      this.forceUpdate()
+        this.query();
     } else {
       alert('Fill in the blank!')
     }
-
+  
   }
 
 
@@ -72,7 +76,7 @@ class App extends Component {
 
           <div className="row">
             <div className="col-8">
-              <input type="number" className="form-control" style={{ borderRadius: '1em' }} onChange={(e) => { this.setState({ num: e.target.value }) }} />
+              <input type="number" className="form-control" style={{ borderRadius: '1em' }} onChange={(e) => { this.setState({ num: e.target.value }) }} value={this.state.num}/>
             </div>
             <div className="col-4">
 
