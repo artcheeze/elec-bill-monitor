@@ -16,7 +16,14 @@ class App extends Component {
     obj: [],
     tap: true
   }
+  
 
+  setDiffer(e){
+    e.reverse();
+    this.setState({raw2: e})
+    
+  
+  }
   async componentDidMount() {
     await this.query();
 
@@ -25,6 +32,7 @@ class App extends Component {
         date2: new Date().toLocaleString()
       })
     }, 1000)
+
 
    
   }
@@ -35,7 +43,7 @@ class App extends Component {
       ress.forEach(e => {
         this.setState({
           raw: this.state.raw.concat(e),
-          raw2: this.state.raw2.concat(e)
+         
         })
 
       });
@@ -99,7 +107,7 @@ class App extends Component {
           <div className="graph-container">
             {
               this.state.tap ?
-              <List data={this.state.raw} />
+              <List data={this.state.raw} setDiffer={(diff)=>this.setDiffer(diff)} />
               :
               <Grap data={this.state.raw2} />
             }

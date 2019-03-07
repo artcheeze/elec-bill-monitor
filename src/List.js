@@ -7,15 +7,19 @@ import { FaSortUp } from 'react-icons/fa';
 class List extends Component {
   state = {
     vector: [],
-    n:[]
+    n:[],
+    diff:[]
   }
+
 
 
   componentDidMount() {
     setTimeout(() => {
       this.props.data.forEach(e => {this.setState({n: this.state.n.concat(e.uv)})})
       this.props.data.forEach((e,i) => {
-        
+        var num = e.uv-this.state.n[i+1]
+        var dif =num.toFixed(2)
+        this.setState({diff: this.state.diff.concat({"name":e.name,"uv":dif})})
         var temp = (
           <div>
             <div class="w-100"></div>
@@ -27,7 +31,7 @@ class List extends Component {
               {e.uv}
               </div>
               <div className="col-4" style={{textAlign:'left',color:'red'}}>
-               {<FaSortUp/>}{e.uv-this.state.n[i+1]}
+               {<FaSortUp/>}{dif}
               </div>
             </div>
           </div>
@@ -40,8 +44,9 @@ class List extends Component {
 
 
       });
-
+      this.props.setDiffer(this.state.diff)
     }, 100)
+  
   }
 
   render() {

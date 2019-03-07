@@ -23,7 +23,7 @@ export default class Example extends PureComponent {
             }}
           >
             <CartesianGrid stroke="#f5f5f5" />
-            <XAxis dataKey="name" style={{fontSize: '10px'}} />
+            <XAxis dataKey="name" style={{fontSize: '10px'}} allowDuplicatedCategory/>
             <Tooltip />
             <Bar dataKey="uv" barSize={20} fill="#413ea0"  label={renderCustomBarLabel}/>
             <Line type="monotone" dataKey="uv" stroke="#ff7300" />
