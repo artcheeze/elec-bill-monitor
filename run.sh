@@ -1,1 +1,1 @@
-screen npm start && cd api && node index.js
+screen npm start && cd api && screen node index.js
