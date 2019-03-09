@@ -21,9 +21,9 @@ class List extends Component {
         var dif =num.toFixed(2)
         this.setState({diff: this.state.diff.concat({"name":e.name,"uv":dif})})
         var temp = (
-          <div>
+          <div className="listItem" >
             <div class="w-100"></div>
-            <div className="row ">
+            <div className="row " id="itemlist">
               <div className="col-4">
                 {e.name}
               </div>

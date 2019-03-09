@@ -26,7 +26,7 @@ export default class Example extends PureComponent {
             <XAxis dataKey="name" style={{fontSize: '10px'}} allowDuplicatedCategory/>
             <Tooltip />
             <Bar dataKey="uv" barSize={20} fill="#413ea0"  label={renderCustomBarLabel}/>
-            <Line type="monotone" dataKey="uv" stroke="#ff7300" />
+            <Line type="monotone" dataKey="uv" label="uv" stroke="#ff7300" />
           </ComposedChart>
         </ResponsiveContainer>
       </div>

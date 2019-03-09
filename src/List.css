@@ -10,3 +10,28 @@
     
 
 }
+
+.listItem {
+    opacity: 0; 
+    transform: scale(0.4) ;
+    animation: listin 0.5s ease-in-out forwards ;
+}
+
+
+
+#itemlist:active{
+    transform: scale(1.2) ;
+ 
+}
+
+@keyframes listin {
+    0%   { }
+   
+    100% { opacity: 1; transform: scale(1) }
+  }
+
+  @keyframes listClick {
+    0%   { }
+   
+    100% { opacity: 1; transform: scale(1) }
+  }
