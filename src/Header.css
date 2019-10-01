@@ -27,6 +27,8 @@
     color: rgb(49, 49, 49);
     animation: lightup 1s ease-in-out 1s forwards ;
 }
+.helloworld{
+}
 
 @keyframes entrance {
     0%   {}
